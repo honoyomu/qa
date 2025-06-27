@@ -52,7 +52,7 @@ const QuestionCard = ({ question, onLikeToggle, currentUserId, rank, maxLikes })
           </div>
           <span className="text-gray-600">•</span>
           <span className="text-gray-500">
-            {formatDistanceToNow(new Date(question.created_at))} ago
+            {formatDistanceToNow(new Date(question.created_at + 'Z'))} ago
           </span>
         </div>
       </div>

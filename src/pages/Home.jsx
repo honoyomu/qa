@@ -72,7 +72,7 @@ const Home = () => {
         await db.createRecord('likes', {
           user_id: user.id,
           question_id: questionId,
-          created_at: new Date().toISOString(),
+          created_at: new Date().toISOString().slice(0, -1),
         });
       }
       fetchQuestions();

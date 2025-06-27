@@ -18,7 +18,7 @@ const QuestionForm = ({ onQuestionAdded }) => {
       await db.createRecord('questions', {
         user_id: user.id,
         content: content.trim(),
-        created_at: new Date().toISOString(),
+        created_at: new Date().toISOString().slice(0, -1),
       });
       setContent('');
       onQuestionAdded();
