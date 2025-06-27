@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { db } from '../api/insforge';
 import QuestionForm from '../components/QuestionForm';
@@ -126,14 +127,15 @@ const Home = () => {
             <p className="text-gray-400 mb-6">
               Sign in to ask questions and vote for your favorites
             </p>
-            <motion.a
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              href="/auth"
-              className="inline-block px-6 py-3 bg-gradient-to-r from-violet-500 to-indigo-500 text-white font-medium rounded-lg shadow-glow hover:shadow-glow-lg transition-all"
-            >
-              Sign in to participate
-            </motion.a>
+            <Link to="/auth">
+              <motion.span
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="inline-block px-6 py-3 bg-gradient-to-r from-violet-500 to-indigo-500 text-white font-medium rounded-lg shadow-glow hover:shadow-glow-lg transition-all"
+              >
+                Sign in to participate
+              </motion.span>
+            </Link>
           </motion.div>
         )}
         
